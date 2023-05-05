@@ -1,0 +1,93 @@
+@use '../../breakpoints.scss' as breakpoints;
+
+.booking {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  position: sticky;
+  z-index: 900;
+  top: 0;
+  background-color: #fff;
+  padding: 0 2rem;
+  border-bottom: 1px solid #e7e7e7;
+
+  p {
+    margin-bottom: 0;
+    display: inline-block;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+    @include breakpoints.tablet {
+      display: none;
+    }
+  }
+
+  &__select {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 150px;
+    background-color: #f3f3f2;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 12px;
+
+    &:first-child {
+      width: 240px;
+    }
+
+    &:last-child {
+      justify-content: center;
+      position: relative;
+    }
+
+    button {
+      background-color: #fff;
+      color: #ff385c;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      width: 30px;
+      position: absolute;
+
+      &:first-child {
+        left: 0.7rem;
+      }
+      &:last-child {
+        right: 0.7rem;
+      }
+    }
+  }
+
+  &__filter {
+    span {
+      height: 45px;
+      width: 45px;
+      background-color: #e7e7e7;
+      border-radius: 8px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__options {
+    @extend .booking__filter;
+    span {
+      &:first-child {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  }
+}

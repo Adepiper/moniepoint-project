@@ -1,0 +1,73 @@
+@use '../../breakpoints.scss' as breakpoints;
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 70px;
+  border-bottom: 1px solid #e7e7e7;
+
+  &__brand {
+    width: 100px;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @include breakpoints.tablet {
+      display: none;
+    }
+  }
+
+  &__link {
+    padding: 1rem 0;
+    color: #a3a5a3;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .active {
+    font-weight: 500;
+    position: relative;
+    color: #000;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 95%;
+      height: 3px;
+      left: 0;
+      bottom: 0;
+      background-color: #ff385c;
+    }
+  }
+
+  &__user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include breakpoints.tablet {
+      display: none;
+    }
+  }
+}
+
+.hamburgar {
+  display: none;
+
+  @include breakpoints.tablet {
+    display: inline-block;
+  }
+}
